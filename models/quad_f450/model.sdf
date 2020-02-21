@@ -78,7 +78,80 @@
           <contact>
             <ode/>
           </contact>
+          <friction> <!-- Rotor 1-->
+   <link name='propeller_1_link'>
+    <pose>0.15891 0.15872 0.062676 0 0 0.7854</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.00082772</mass>
+        <inertia>
+          <ixx>3.593e-07</ixx>
+          <ixy>-3.6419e-07</ixy>
+          <ixz>2.9799e-13</ixz>
+          <iyy>3.8272e-07</iyy>
+          <iyz>2.4963e-13</iyz>
+          <izz>7.3988e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='propeller_1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.065</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
           <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='propeller_1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quad_f450/meshes/propeller_1_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Yellow</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='joint_propeller_1' type='revolute'>
+      <child>propeller_1_link</child>
+      <parent>base_link</parent>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>10</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.005</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
             <ode/>
           </friction>
         </surface>
@@ -127,7 +200,7 @@
     </joint>
 
     <!-- Rotor 2-->
-   <link name='propeller_2_link'>
+    <link name='propeller_2_link'>
     <pose>0.1589 -0.15909 0.062676 0 0 -0.7854</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -182,7 +255,157 @@
       <parent>base_link</parent>
       <pose>0 0 0 0 0 0</pose>
       <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>10</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.005</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Rotor 3-->
+    <link name='propeller_3_link'>
+    <pose>-0.15891 -0.15908 0.062676 0 0 0.7854</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.00082772</mass>
+        <inertia>
+          <ixx>3.593e-07</ixx>
+          <ixy>-3.6419e-07</ixy>
+          <ixz>2.9673e-13</ixz>
+          <iyy>3.8272e-07</iyy>
+          <iyz>2.709e-13</iyz>
+          <izz>7.3988e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='propeller_3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.065</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='propeller_3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quad_f450/meshes/propeller_1_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Yellow</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='joint_propeller_3' type='revolute'>
+      <child>propeller_3_link</child>
+      <parent>base_link</parent>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
         <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>10</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.005</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Rotor 4-->
+    <link name='propeller_4_link'>
+    <pose>-0.1589 0.15873 0.062676 0 0 -0.7854</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.00082772</mass>
+        <inertia>
+          <ixx>3.8272e-07</ixx>
+          <ixy>3.6419e-07</ixy>
+          <ixz>-2.49e-13</ixz>
+          <iyy>3.593e-07</iyy>
+          <iyz>2.7924e-13</iyz>
+          <izz>7.3988e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='propeller_4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.005</length>
+            <radius>0.065</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='propeller_4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quad_f450/meshes/propeller_2_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Yellow</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='joint_propeller_4' type='revolute'>
+      <child>propeller_4_link</child>
+      <parent>base_link</parent>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
