@@ -442,10 +442,10 @@
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
-        <gravity>1</gravity>
-        <velocity_decay/>
-        <self_collide>0</self_collide>
       </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
       <sensor name="camera_imu" type="imu">
         <always_on>1</always_on>
       </sensor>
